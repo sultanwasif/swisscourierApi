@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_A25ADE_unexModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_orders">
+          <Key>
+            <PropertyRef Name="ORDER_NO" />
+          </Key>
+          <Property Name="ORDER_NO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ORDER_DATE" Type="date" Nullable="false" />
+          <Property Name="VOUCHER_NO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DRIVER_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="DRIVER_MOBILE" Type="varchar" MaxLength="100" />
+          <Property Name="DELIVERY_DATE" Type="date" />
+          <Property Name="PRODUCT_CHARGE" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="DELIVERY_CHARGE" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="ORDER_REMARKS" Type="nvarchar" MaxLength="500" />
+          <Property Name="CLIENT_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="CLIENT_MOBILE" Type="varchar" MaxLength="100" />
+          <Property Name="CLIENT_ADDRESS" Type="nvarchar" MaxLength="500" />
+          <Property Name="CLIENT_LOCATION" Type="nvarchar" MaxLength="500" />
+          <Property Name="CLIENT_EMIRATE" Type="nvarchar" MaxLength="500" />
+          <Property Name="CUSTOMER_NAME" Type="nvarchar" MaxLength="500" />
+          <Property Name="CUSTOMER_MOBILE" Type="varchar" MaxLength="100" />
+          <Property Name="CUSTOMER_ADDRESS" Type="nvarchar" MaxLength="500" />
+          <Property Name="CUSTOMER_LOCATION" Type="nvarchar" MaxLength="500" />
+          <Property Name="CUSTOMER_EMIRATE" Type="nvarchar" MaxLength="500" />
+          <Property Name="VOUCHER_STATUS" Type="varchar" MaxLength="100" />
+          <Property Name="PAID_STATUS" Type="varchar" MaxLength="100" />
+          <Property Name="UPDATE_DATE" Type="timestamp" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityContainer Name="DB_A25ADE_unexModelStoreContainer">
+          <EntitySet Name="tbl_orders" EntityType="Self.tbl_orders" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_A25ADE_unexModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_orders">
+          <Key>
+            <PropertyRef Name="ORDER_NO" />
+          </Key>
+          <Property Name="ORDER_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ORDER_DATE" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="VOUCHER_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DRIVER_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DRIVER_MOBILE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DELIVERY_DATE" Type="DateTime" Precision="0" />
+          <Property Name="PRODUCT_CHARGE" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="DELIVERY_CHARGE" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="ORDER_REMARKS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CLIENT_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CLIENT_MOBILE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CLIENT_ADDRESS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CLIENT_LOCATION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CLIENT_EMIRATE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CUSTOMER_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CUSTOMER_MOBILE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CUSTOMER_ADDRESS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CUSTOMER_LOCATION" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CUSTOMER_EMIRATE" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="VOUCHER_STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PAID_STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATE_DATE" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityContainer Name="DB_A25ADE_unexEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_orders" EntityType="Self.tbl_orders" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_A25ADE_unexModelStoreContainer" CdmEntityContainer="DB_A25ADE_unexEntities">
+          <EntitySetMapping Name="tbl_orders">
+            <EntityTypeMapping TypeName="DB_A25ADE_unexModel.tbl_orders">
+              <MappingFragment StoreEntitySet="tbl_orders">
+                <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
+                <ScalarProperty Name="ORDER_DATE" ColumnName="ORDER_DATE" />
+                <ScalarProperty Name="VOUCHER_NO" ColumnName="VOUCHER_NO" />
+                <ScalarProperty Name="DRIVER_NAME" ColumnName="DRIVER_NAME" />
+                <ScalarProperty Name="DRIVER_MOBILE" ColumnName="DRIVER_MOBILE" />
+                <ScalarProperty Name="DELIVERY_DATE" ColumnName="DELIVERY_DATE" />
+                <ScalarProperty Name="PRODUCT_CHARGE" ColumnName="PRODUCT_CHARGE" />
+                <ScalarProperty Name="DELIVERY_CHARGE" ColumnName="DELIVERY_CHARGE" />
+                <ScalarProperty Name="ORDER_REMARKS" ColumnName="ORDER_REMARKS" />
+                <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+                <ScalarProperty Name="CLIENT_MOBILE" ColumnName="CLIENT_MOBILE" />
+                <ScalarProperty Name="CLIENT_ADDRESS" ColumnName="CLIENT_ADDRESS" />
+                <ScalarProperty Name="CLIENT_LOCATION" ColumnName="CLIENT_LOCATION" />
+                <ScalarProperty Name="CLIENT_EMIRATE" ColumnName="CLIENT_EMIRATE" />
+                <ScalarProperty Name="CUSTOMER_NAME" ColumnName="CUSTOMER_NAME" />
+                <ScalarProperty Name="CUSTOMER_MOBILE" ColumnName="CUSTOMER_MOBILE" />
+                <ScalarProperty Name="CUSTOMER_ADDRESS" ColumnName="CUSTOMER_ADDRESS" />
+                <ScalarProperty Name="CUSTOMER_LOCATION" ColumnName="CUSTOMER_LOCATION" />
+                <ScalarProperty Name="CUSTOMER_EMIRATE" ColumnName="CUSTOMER_EMIRATE" />
+                <ScalarProperty Name="VOUCHER_STATUS" ColumnName="VOUCHER_STATUS" />
+                <ScalarProperty Name="PAID_STATUS" ColumnName="PAID_STATUS" />
+                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
