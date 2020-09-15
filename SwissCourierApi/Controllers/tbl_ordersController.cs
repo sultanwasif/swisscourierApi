@@ -37,6 +37,21 @@ namespace SwissCourierApi.Controllers
             return Ok(tbl_orders);
         }
 
+        // GET: api/tbl_orders/5/5
+        [Route("api/tbl_orders/{id}/{phonenum}")]
+        public IHttpActionResult Gettbl_ordersPhone(string id, string phonenum)
+        {
+            List<tbl_orders> DtoList;
+            var data = db.tbl_orders.Where(x => x.VOUCHER_NO == id && x.CUSTOMER_MOBILE == phonenum).ToList();
+            DtoList = data;
+            if (DtoList == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(DtoList);
+        }
+
         // PUT: api/tbl_orders/5
         [ResponseType(typeof(void))]
         public IHttpActionResult Puttbl_orders(string id, tbl_orders tbl_orders)
