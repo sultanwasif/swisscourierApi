@@ -7,11 +7,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using SwissCourierApi.Models;
 
 namespace SwissCourierApi.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class tbl_ordersController : ApiController
     {
         private DB_A25ADE_unexEntities db = new DB_A25ADE_unexEntities();
