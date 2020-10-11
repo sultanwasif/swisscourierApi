@@ -36,5 +36,7 @@ namespace SwissCourierApi.Models
         public string VOUCHER_STATUS { get; set; }
         public string PAID_STATUS { get; set; }
         public byte[] UPDATE_DATE { get; set; }
+        public Nullable<decimal> CLIENT_CHARGE { get; set; }
+        public Nullable<decimal> ORDER_SLNO { get; set; }
     }
 }

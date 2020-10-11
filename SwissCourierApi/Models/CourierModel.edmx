@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DB_A25ADE_unexModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DB_A25ADE_unexModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tbl_orders">
           <Key>
             <PropertyRef Name="ORDER_NO" />
@@ -15,8 +15,8 @@
           <Property Name="DRIVER_NAME" Type="nvarchar" MaxLength="500" />
           <Property Name="DRIVER_MOBILE" Type="varchar" MaxLength="100" />
           <Property Name="DELIVERY_DATE" Type="date" />
-          <Property Name="PRODUCT_CHARGE" Type="numeric" Precision="10" Scale="0" />
-          <Property Name="DELIVERY_CHARGE" Type="numeric" Precision="10" Scale="0" />
+          <Property Name="PRODUCT_CHARGE" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="DELIVERY_CHARGE" Type="numeric" Precision="18" Scale="4" />
           <Property Name="ORDER_REMARKS" Type="nvarchar" MaxLength="500" />
           <Property Name="CLIENT_NAME" Type="nvarchar" MaxLength="500" />
           <Property Name="CLIENT_MOBILE" Type="varchar" MaxLength="100" />
@@ -31,12 +31,13 @@
           <Property Name="VOUCHER_STATUS" Type="varchar" MaxLength="100" />
           <Property Name="PAID_STATUS" Type="varchar" MaxLength="100" />
           <Property Name="UPDATE_DATE" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="CLIENT_CHARGE" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="ORDER_SLNO" Type="numeric" Precision="18" Scale="4" />
         </EntityType>
         <EntityContainer Name="DB_A25ADE_unexModelStoreContainer">
           <EntitySet Name="tbl_orders" EntityType="Self.tbl_orders" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DB_A25ADE_unexModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -50,8 +51,8 @@
           <Property Name="DRIVER_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="DRIVER_MOBILE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="DELIVERY_DATE" Type="DateTime" Precision="0" />
-          <Property Name="PRODUCT_CHARGE" Type="Decimal" Precision="10" Scale="0" />
-          <Property Name="DELIVERY_CHARGE" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="PRODUCT_CHARGE" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="DELIVERY_CHARGE" Type="Decimal" Precision="18" Scale="4" />
           <Property Name="ORDER_REMARKS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="CLIENT_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="CLIENT_MOBILE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -66,6 +67,8 @@
           <Property Name="VOUCHER_STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PAID_STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="UPDATE_DATE" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="CLIENT_CHARGE" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="ORDER_SLNO" Type="Decimal" Precision="18" Scale="4" />
         </EntityType>
         <EntityContainer Name="DB_A25ADE_unexEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tbl_orders" EntityType="Self.tbl_orders" />
@@ -79,6 +82,8 @@
           <EntitySetMapping Name="tbl_orders">
             <EntityTypeMapping TypeName="DB_A25ADE_unexModel.tbl_orders">
               <MappingFragment StoreEntitySet="tbl_orders">
+                <ScalarProperty Name="ORDER_SLNO" ColumnName="ORDER_SLNO" />
+                <ScalarProperty Name="CLIENT_CHARGE" ColumnName="CLIENT_CHARGE" />
                 <ScalarProperty Name="ORDER_NO" ColumnName="ORDER_NO" />
                 <ScalarProperty Name="ORDER_DATE" ColumnName="ORDER_DATE" />
                 <ScalarProperty Name="VOUCHER_NO" ColumnName="VOUCHER_NO" />
