@@ -42,6 +42,7 @@ namespace SwissCourierApi.Controllers
         public IHttpActionResult Gettbl_ordersPhone(string id, string phonenum)
         {
             List<tbl_orders> DtoList;
+            id = id.Replace("X", ".");
             var data = db.tbl_orders.Where(x => x.VOUCHER_NO == id || x.CUSTOMER_MOBILE == phonenum).OrderByDescending(x => x.ORDER_NO).ToList().ToList();
             DtoList = data;
             if (DtoList == null)
